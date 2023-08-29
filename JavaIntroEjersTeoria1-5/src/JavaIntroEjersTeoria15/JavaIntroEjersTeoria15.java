@@ -142,14 +142,71 @@ public class JavaIntroEjersTeoria15 {
                 System.out.println("No existe una valor válido para tipo de bomba");
         }
         
-        */
-        
         //ESTRUCTURAS REPETITIVAS
         
         //EJERCICIO 8
         //Escriba un programa que valide si una nota está entre 0 y 10, sino está entre 0 y 10 la nota se
         //pedirá de nuevo hasta que la nota sea correcta.
         
+        int nota = -1;
         
+        while (nota < 0 || nota > 10) {
+            System.out.println("Ingrese una nota que esté comprendida entre 0 y 10");
+            nota = leer.nextInt();
+        }
+        System.out.println("La nota ingresada es: " + nota);
+        
+        //EJERCICIO 9
+        //Escriba un programa que lea 20 números. Si el número leído es igual a cero se debe salir del
+        //bucle y mostrar el mensaje "Se capturó el numero cero". El programa deberá calcular y mostrar
+        //el resultado de la suma de los números leídos, pero si el número es negativo no debe sumarse.
+        //Nota: recordar el uso de la sentencia break.
+        
+        int suma = 0;
+        int contador = 0;
+        int nro;
+        
+        do {
+            System.out.println("Ingrese un número");
+            nro = leer.nextInt();
+            
+            if (nro == 0) {
+                System.out.println("Se capturó el número cero.");
+                break;
+            }
+            
+            if (nro > 0) {
+                suma = suma + nro;
+                contador = contador + 1;
+            }
+        } while (contador < 20);
+        
+        System.out.println("La suma de todos los números ingresados es " + suma);
+        
+        */
+        
+        //EJERCICIO 10
+        //Realizar un programa que lea 4 números (comprendidos entre 1 y 20) e imprima el número
+        //ingresado seguido de tantos asteriscos como indique su valor. Por ejemplo:
+        //5 *****
+        //3 ***
+        //11 ***********
+        //2 **
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Ingrese un número");
+            int nro = leer.nextInt();
+            
+            if (nro >= 1 && nro <= 20) {
+                System.out.print(nro + " ");
+                for (int j = 0; j <= nro; j++) {
+                    System.out.print("*");
+                }
+                System.out.println("");
+            } else {
+                System.out.println("Número fuera del rango permitido.");
+                i--;
+            }
+        }
     }
 }

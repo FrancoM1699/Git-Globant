@@ -131,9 +131,8 @@ public class Guía7Enc2939Ejer15 {
         String palabra = leer.nextLine();
         
         String letra = palabra.substring(0,1);
-        String letraDeseada = "a";
         
-        if (letra.equalsIgnoreCase(letraDeseada)) {
+        if (letra.equalsIgnoreCase("A")) {
             System.out.println("CORRECTO");
         } else {
             System.out.println("INCORRECTO");
