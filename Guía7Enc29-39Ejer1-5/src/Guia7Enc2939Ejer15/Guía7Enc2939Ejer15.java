@@ -137,8 +137,6 @@ public class Guía7Enc2939Ejer15 {
         } else {
             System.out.println("INCORRECTO");
         }
-
-        */
         
         //BUCLES Y SENTENCIAS DE SALTO, BREAK Y CONTINUE
         
@@ -146,5 +144,116 @@ public class Guía7Enc2939Ejer15 {
         //Escriba un programa en el cual se ingrese un valor límite positivo, y a continuación
         //solicite números al usuario hasta que la suma de los números introducidos supere el
         //límite inicial.
+        
+        System.out.println("Ingrese un valor límite positivo:");
+        int limite = leer.nextInt();
+        
+        if (limite <= 0) {
+            System.out.println("El valor límite debe ser positivo.");
+            return; // Salir del programa si el límite no es positivo
+        }
+
+        int suma = 0;
+        int contador = 0;
+
+        while (suma <= limite) {
+            System.out.println("Ingrese un número:");
+            int numero = leer.nextInt();
+            
+            suma += numero;
+            contador++;
+        }
+
+        System.out.println("La suma de los números introducidos superó el límite.");
+        System.out.println("Se ingresaron un total de " + contador + " números.");
+        System.out.println("La suma total es: " + suma);
+        
+        */
+        
+        //EJERCICIO 11
+        //Realizar un programa que pida dos números enteros positivos por teclado y muestre por
+        //pantalla el siguiente menú:
+        
+        //MENU
+        //1. Sumar
+        //2. Restar
+        //3. Multiplicar
+        //4. Dividir
+        //5. Salir
+                
+        //Elija opción:
+        //El usuario deberá elegir una opción y el programa deberá mostrar el resultado por
+        //pantalla y luego volver al menú. El programa deberá ejecutarse hasta que se elija la
+        //opción 5. Tener en cuenta que, si el usuario selecciona la opción 5, en vez de salir del
+        //programa directamente, se debe mostrar el siguiente mensaje de confirmación: ¿Está
+        //seguro que desea salir del programa (S/N)? Si el usuario selecciona el carácter ‘S’ se sale
+        //del programa, caso contrario se vuelve a mostrar el menú.
+        
+        System.out.println("Ingrese 2 números enteros positivos");
+        int num1 = leer.nextInt();
+        int num2 = leer.nextInt();
+        
+        if (num1 < 0 || num2 < 0) {
+            System.out.println("Ambos números deben ser positivos");
+            return;
+        }
+        
+        String respuesta = "N";
+        
+        do {
+            System.out.println("Menu");
+            System.out.println("1. Sumar");
+            System.out.println("2. Restar");
+            System.out.println("3. Multiplicar");
+            System.out.println("4. Dividir");
+            System.out.println("5. Salir");
+            System.out.println("");
+            System.out.println("Elija una opción");
+            int opcion = leer.nextInt();
+            
+            leer.nextLine();
+            
+            switch (opcion) {
+            case 1:
+                int suma = num1 + num2;
+                System.out.println("La suma de " + num1 + " y " + num2 + " es: " + suma);
+                break;
+            case 2:
+                int resta = num1 - num2;
+                System.out.println("La resta entre " + num1 + " y " + num2 + " es: " + resta);
+                break;
+            case 3:
+                int multi = num1 * num2;
+                System.out.println("La multiplicación entre " + num1 + " y " + num2 + " es: " + multi);
+                break;
+            case 4:
+                int div = num1 / num2;
+                System.out.println("La división entre " + num1 + " y " + num2 + " es: " + div);
+                break;
+            case 5:
+                System.out.println("Está seguro de que desea salir? (S/N)");
+                respuesta = leer.next();
+            }
+        } while (respuesta.equalsIgnoreCase("N"));
+        
+        //EJERCICIO 12
+        //Realizar un programa que simule el funcionamiento de un dispositivo RS232, este tipo de
+        //dispositivo lee cadenas enviadas por el usuario. Las cadenas deben llegar con un formato
+        //fijo: tienen que ser de un máximo de 5 caracteres de largo, el primer carácter tiene que
+        //ser X y el último tiene que ser una O.
+        
+        //Las secuencias leídas que respeten el formato se consideran correctas, la secuencia
+        //especial “&&&&&” marca el final de los envíos (llamémosla FDE), y toda secuencia
+        //distinta de FDE, que no respete el formato se considera incorrecta.
+        
+        //Al finalizar el proceso, se imprime un informe indicando la cantidad de lecturas correctas
+        //e incorrectas recibidas. Para resolver el ejercicio deberá investigar cómo se utilizan las
+        //siguientes funciones de Java Substring(), Length(), equals().
+        
+        System.out.println("Ingrese una cadena de un máximo de 5 caracteres de largo que comience con X y termine con O.");
+        String cadena = leer.nextLine();
+        
+        
+        
     }
 }

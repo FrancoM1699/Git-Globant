@@ -183,8 +183,6 @@ public class JavaIntroEjersTeoria15 {
         
         System.out.println("La suma de todos los números ingresados es " + suma);
         
-        */
-        
         //EJERCICIO 10
         //Realizar un programa que lea 4 números (comprendidos entre 1 y 20) e imprima el número
         //ingresado seguido de tantos asteriscos como indique su valor. Por ejemplo:
@@ -208,5 +206,7 @@ public class JavaIntroEjersTeoria15 {
                 i--;
             }
         }
+        
+        */
     }
 }
