@@ -168,8 +168,6 @@ public class Guía7Enc2939Ejer15 {
         System.out.println("Se ingresaron un total de " + contador + " números.");
         System.out.println("La suma total es: " + suma);
         
-        */
-        
         //EJERCICIO 11
         //Realizar un programa que pida dos números enteros positivos por teclado y muestre por
         //pantalla el siguiente menú:
@@ -250,10 +248,56 @@ public class Guía7Enc2939Ejer15 {
         //e incorrectas recibidas. Para resolver el ejercicio deberá investigar cómo se utilizan las
         //siguientes funciones de Java Substring(), Length(), equals().
         
-        System.out.println("Ingrese una cadena de un máximo de 5 caracteres de largo que comience con X y termine con O.");
-        String cadena = leer.nextLine();
+        System.out.println("Ingrese una cadena de 5 caracteres de largo que comience con X y termine con O.");
         
+        int correctas = 0;
+        int incorrectas = 0;
+        String FDE = "&&&&&";
         
+        while (true) {
+            String cadena = leer.nextLine();
+            
+            if (cadena.equals(FDE)) {
+                System.out.println("Ingreso la secuencia especial");
+                break;
+            }
+            
+            if (cadena.length() == 5 && cadena.charAt(0) == 'X' && cadena.charAt(4) == 'O') {
+                System.out.println("Ha ingresado una cadena válida");
+                correctas ++;
+            } else {
+                System.out.println("Ha ingresado una cadena incorrecta");
+                incorrectas ++;
+            }
+        }
+        
+        System.out.println("Cantidad de lecturas correctas: " + correctas);
+        System.out.println("Cantidad de lecturas incorrectas: " + incorrectas);
+        
+        */
+        
+        //EJERCICIO 13
+        
+        //Dibujar un cuadrado de N elementos por lado utilizando el carácter “*”. Por ejemplo, si el
+        //cuadrado tiene 4 elementos por lado se deberá dibujar lo siguiente:
+        //* * * *
+        //*     *
+        //*     *
+        //* * * *
+        
+        System.out.println("Ingrese la cantidad de elementos base por lado que tendrá el cuadrado");
+        int cantidad = leer.nextInt();
+        
+        for (int i = 0; i < cantidad; i++) {
+            for (int j = 0; j < cantidad; j++) {
+                if (i == 0 || i == cantidad - 1 || j == 0 || j == cantidad - 1) {
+                    System.out.print("* "); // Checkea si estamos en alguno de los bordes del cuadrado
+                } else {
+                    System.out.print("  "); // Espacio en blanco para el interior del cuadrado
+                }
+            }
+            System.out.println(); // Nueva línea al final de cada fila
+        }
         
     }
 }
