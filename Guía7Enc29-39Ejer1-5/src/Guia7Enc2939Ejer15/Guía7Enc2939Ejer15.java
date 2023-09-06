@@ -274,8 +274,6 @@ public class Guía7Enc2939Ejer15 {
         System.out.println("Cantidad de lecturas correctas: " + correctas);
         System.out.println("Cantidad de lecturas incorrectas: " + incorrectas);
         
-        */
-        
         //EJERCICIO 13
         
         //Dibujar un cuadrado de N elementos por lado utilizando el carácter “*”. Por ejemplo, si el
@@ -299,5 +297,6 @@ public class Guía7Enc2939Ejer15 {
             System.out.println(); // Nueva línea al final de cada fila
         }
         
+        */
     }
 }

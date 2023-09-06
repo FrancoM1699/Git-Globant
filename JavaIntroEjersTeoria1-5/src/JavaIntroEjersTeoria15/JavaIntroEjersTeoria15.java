@@ -207,6 +207,100 @@ public class JavaIntroEjersTeoria15 {
             }
         }
         
+        //EJERCICIO 11
+        //Escribir un programa que procese una secuencia de caracteres ingresada por teclado y terminada
+        //en punto, y luego codifique la palabra o frase ingresada de la siguiente manera: cada vocal se
+        //reemplaza por el carácter que se indica en la tabla y el resto de los caracteres (incluyendo a las
+        //vocales acentuadas) se mantienen sin cambios.
+        
+        //a e i o u
+        //@ # $ % *
+        
+        //Realice un subprograma que reciba una secuencia de caracteres y retorne la codificación
+        //correspondiente. Utilice la estructura “según” para la transformación.
+        
+        //Por ejemplo, si el usuario ingresa: Ayer, lunes, salimos a las once y 10.
+        
+        //La salida del programa debería ser: @y#r, l*n#s, s@l$m%s @ l@s %nc# y 10.
+        
+        System.out.println("Ingrese una frase o palabra (termine con un punto): ");
+        String entrada = leer.nextLine();
+
+        if (entrada.endsWith(".")) {
+            String codificado = codificar(entrada);
+            System.out.println("Texto codificado: " + codificado);
+        } else {
+            System.out.println("La entrada debe terminar con un punto.");
+        }
+
+        leer.close();
+
         */
+        
+        //EJERCICIO 12
+        //Crea un procedimiento EsMultiplo que reciba los dos números pasados por el usuario, validando
+        //que el primer numero múltiplo del segundo y e imprima si el primer numero es múltiplo del
+        //segundo, sino informe que no lo son.    
+        
+        System.out.print("Ingresa el primer número: ");
+        int numero1 = leer.nextInt();
+
+        System.out.print("Ingresa el segundo número: ");
+        int numero2 = leer.nextInt();
+
+        if (esMultiplo(numero1, numero2)) {
+            System.out.println(numero1 + " es múltiplo de " + numero2);
+        } else {
+            System.out.println(numero1 + " no es múltiplo de " + numero2);
+        }
+
+        leer.close();
+        
+    }
+    
+    /*
+    
+    //FUNCION EJERCICIO 11
+    
+    public static String codificar(String entrada) {
+        String resultado = "";
+
+        for (int i = 0; i < entrada.length(); i++) {
+            char caracter = entrada.charAt(i);
+
+            switch (caracter) {
+                case 'a':
+                case 'A':
+                    resultado = resultado.concat("@");
+                    break;
+                case 'e':
+                case 'E':
+                    resultado = resultado.concat("#");
+                    break;
+                case 'i':
+                case 'I':
+                    resultado = resultado.concat("$");
+                    break;
+                case 'o':
+                case 'O':
+                    resultado = resultado.concat("%");
+                    break;
+                case 'u':
+                case 'U':
+                    resultado = resultado.concat("*");
+                    break;
+                default:
+                    resultado = resultado.concat(String.valueOf(caracter));
+                    break;
+            }
+        }
+
+        return resultado;
+    }
+    
+    */
+    
+    public static boolean esMultiplo(int numero1, int numero2) {
+        return numero1 % numero2 == 0;
     }
 }
