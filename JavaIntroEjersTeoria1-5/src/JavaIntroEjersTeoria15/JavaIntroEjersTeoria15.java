@@ -234,8 +234,6 @@ public class JavaIntroEjersTeoria15 {
         }
 
         leer.close();
-
-        */
         
         //EJERCICIO 12
         //Crea un procedimiento EsMultiplo que reciba los dos números pasados por el usuario, validando
@@ -256,6 +254,15 @@ public class JavaIntroEjersTeoria15 {
 
         leer.close();
         
+        */
+        
+        //EJERCICIO 13
+        //Crea un vector llamado ‘Equipo’ cuya dimensión sea la cantidad de compañeros de equipo y
+        //define su tipo de dato de tal manera que te permita alojar sus nombres más adelante.
+        
+        System.out.println("Ingrese la cantidad de compañeros del equipo");
+        int cantidad = leer.nextInt();
+        String[] Equipo = new String[cantidad];
     }
     
     /*
@@ -298,9 +305,11 @@ public class JavaIntroEjersTeoria15 {
         return resultado;
     }
     
-    */
+    //PROCEDIMIENTO EJERCICIO 12
     
     public static boolean esMultiplo(int numero1, int numero2) {
         return numero1 % numero2 == 0;
     }
+
+    */
 }

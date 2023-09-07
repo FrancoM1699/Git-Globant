@@ -297,6 +297,46 @@ public class Guía7Enc2939Ejer15 {
             System.out.println(); // Nueva línea al final de cada fila
         }
         
+        //EJERCICIO 14
+        
+        //Crea una aplicación que a través de una función nos convierta una cantidad de euros
+        //introducida por teclado a otra moneda, estas pueden ser a dólares, yenes o libras. La
+        //función tendrá como parámetros, la cantidad de euros y la moneda a convertir que será
+        //una cadena, este no devolverá ningún valor y mostrará un mensaje indicando el cambio
+        //(void).
+        
+        //El cambio de divisas es:
+        //* 0.86 libras es un 1 €
+        //* 1.28611 $ es un 1 €
+        //* 129.852 yenes es un 1 €
+        
+        System.out.println("Ingrese la cantidad de euros a convertir");
+        int euros = leer.nextInt();
+        
+        System.out.println("y la moneda a la que desea convertir (dolares, yenes o libras)");
+        String moneda = leer.next();
+        
+        convertir(euros,moneda);
+
         */
+        
+        
     }
+    
+        /*
+    
+        //FUNCIÓN EJERCICIO 14
+    
+    public static void convertir (int euros, String moneda) {
+        
+        if (moneda.equalsIgnoreCase("dolares")) {
+            System.out.println(euros + " euros equivalen a " + euros * 1.28611 + " dolares.");
+        } else if (moneda.equalsIgnoreCase("yenes")) {
+            System.out.println(euros + " euros equivalen a " + euros * 129.852 + " yenes.");
+        } else {
+            System.out.println(euros + " euros equivalen a " + euros * 0.86 + " libras.");
+        }
+    }
+
+        */
 }
