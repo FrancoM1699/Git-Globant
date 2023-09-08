@@ -254,15 +254,29 @@ public class JavaIntroEjersTeoria15 {
 
         leer.close();
         
-        */
-        
         //EJERCICIO 13
         //Crea un vector llamado ‘Equipo’ cuya dimensión sea la cantidad de compañeros de equipo y
         //define su tipo de dato de tal manera que te permita alojar sus nombres más adelante.
         
+        //EJERCICIO 14
+        //Utilizando un Bucle for, aloja en el vector Equipo, los nombres de tus compañeros de equipo
+        
         System.out.println("Ingrese la cantidad de compañeros del equipo");
         int cantidad = leer.nextInt();
+        
         String[] Equipo = new String[cantidad];
+        
+        for (int i = 0; i < cantidad; i++) {
+            System.out.println("Ingrese un nombre");
+            String nombre = leer.next();
+            Equipo[i] = nombre;
+        }
+        System.out.println("Los jugadores son:");
+        for (int j = 0; j < cantidad; j++) {
+            System.out.print("[" + Equipo[j] + "]");
+        }
+        
+        */
     }
     
     /*
