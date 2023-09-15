@@ -317,15 +317,86 @@ public class Guía7Enc2939Ejer15 {
         String moneda = leer.next();
         
         convertir(euros,moneda);
-
+        
+        //EJERCICIO 15
+        
+        //Realizar un algoritmo que rellene un vector con los 100 primeros números enteros y los
+        //muestre por pantalla en orden descendente.
+        
+        int[] naturales = new int[100];
+        
+        for (int i = 0; i < 100; i++) {
+            naturales[i] = i + 1;
+        }
+        
+        for (int i = 99; i >= 0; i--) {
+            System.out.println("[" + naturales[i] + "]");
+        }
+    }
+        
+        //EJERCICIO 16
+        
+        //Realizar un algoritmo que rellene un vector de tamaño N con valores aleatorios y le pida
+        //al usuario un numero a buscar en el vector. El programa mostrará donde se encuentra el
+        //numero y si se encuentra repetido.
+        
+        System.out.println("Ingrese el tamaño del vector a rellenar con valores aleatorios");
+        int tamanio = leer.nextInt();
+        int[] vector = new int[tamanio];
+        
+        System.out.println("Ingrese el número que desea buscar dentro del arreglo");
+        int buscado = leer.nextInt();
+        
+        boolean encontrado = false;
+        int repetido = 0;
+        int posicion = 0;
+        
+        for (int i = 0; i < tamanio; i++) {
+            vector[i] = (int) (Math.random() * 10);
+        }
+        
+        for (int i = 0; i < tamanio; i++) {
+            if (vector[i] == buscado) {
+                encontrado = true;
+                repetido ++;
+                posicion = i;
+            }
+        }
+    
+        if (encontrado) {
+            System.out.print("El número buscado se encontró por primera vez en la posición " + posicion + " del vector ");
+            if (repetido > 1) {
+                System.out.println("y está repetido " + repetido + " veces.");
+            }
+        } else {
+            System.out.println("El número buscado no se encuentra en el vector");
+        }
+    
         */
         
+        //EJERCICIO 17  
         
-    }
+        //Recorrer un vector de N enteros contabilizando cuántos números son de 1 dígito, cuántos
+        //de 2 dígitos, etcétera (hasta 5 dígitos).
     
+        System.out.println("Ingrese el tamaño del vector a rellenar con valores aleatorios");
+        int tamanio = leer.nextInt();
+        int[] vector = new int[tamanio];
+        
+        System.out.println("Ingreses números al vector");
+        for (int i = 0; i < tamanio; i++) {
+            System.out.println("Ingrese el número " + (i + 1) + ":");
+            vector[i] = leer.nextInt();
+        }
+    
+        for (int i = 0; i < tamanio; i++) {
+            
+        }
+    
+    }
         /*
     
-        //FUNCIÓN EJERCICIO 14
+        //PROCEDIMIENTO EJERCICIO 14
     
     public static void convertir (int euros, String moneda) {
         
@@ -337,6 +408,11 @@ public class Guía7Enc2939Ejer15 {
             System.out.println(euros + " euros equivalen a " + euros * 0.86 + " libras.");
         }
     }
-
         */
+    
+
+
+
+
+
 }
