@@ -371,32 +371,127 @@ public class Guía7Enc2939Ejer15 {
         } else {
             System.out.println("El número buscado no se encuentra en el vector");
         }
-    
-        */
         
         //EJERCICIO 17  
         
         //Recorrer un vector de N enteros contabilizando cuántos números son de 1 dígito, cuántos
         //de 2 dígitos, etcétera (hasta 5 dígitos).
     
-        System.out.println("Ingrese el tamaño del vector a rellenar con valores aleatorios");
+        System.out.println("Ingrese el tamaño del vector a rellenar");
         int tamanio = leer.nextInt();
         int[] vector = new int[tamanio];
         
-        System.out.println("Ingreses números al vector");
         for (int i = 0; i < tamanio; i++) {
             System.out.println("Ingrese el número " + (i + 1) + ":");
             vector[i] = leer.nextInt();
         }
-    
+        
+        // Inicializamos contadores para cada cantidad de dígitos
+        int[] contadores = new int[6]; // Índices 0 a 5 representan 0 a 5 dígitos
+        
         for (int i = 0; i < tamanio; i++) {
+            int numero = Math.abs(vector[i]); //Sacamos el valor absoluto en caso de haber números negativos
+            int digitos = contarDigitos(numero); //Contamos la cantidad de dígitos
             
+            if (digitos <= 5) {
+                contadores[digitos]++; //Si la cantidad de dígitos es menor o igual a 5, sumamos 1 al valor que representa esa cantidad
+            }
+        }
+        
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Números con " + i + " dígitos: " + contadores[i]);
+        }
+        
+        //EJERCICIO 18
+        
+        //Realizar un programa que rellene un matriz de 4 x 4 de valores aleatorios y muestre la
+        //traspuesta de la matriz. La matriz traspuesta de una matriz A se denota por B y se
+        //obtiene cambiando sus filas por columnas (o viceversa).
+        
+        int[][] matriz = new int[4][4];
+        
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                matriz[i][j] = (int) (Math.random() * 10); //Rellenamos la matriz con números aleatorios
+            }
+        }
+        System.out.println("Matriz original:");
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print("[" + matriz[i][j] + "]");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+        
+        int[][] traspuesta = new int [4][4]; //Creamos la matriz traspuesta
+        
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                traspuesta[i][j] = matriz[j][i]; //Almacenamos los valores en la matriz traspuesta, inviertiendo las columnas y las filas
+            }
+        }
+        
+        System.out.println("Matriz traspuesta:");
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print("[" + traspuesta[i][j] + "]");
+            }
+            System.out.println();
+        }
+        
+        //EJERCICIO 19
+        
+        //Realice un programa que compruebe si una matriz dada es anti simétrica. Se dice que
+        //una matriz A es anti simétrica cuando ésta es igual a su propia traspuesta, pero cambiada
+        //de signo. Es decir, A es anti simétrica si A = -AT. La matriz traspuesta de una matriz A se
+        //denota por AT y se obtiene cambiando sus filas por columnas (o viceversa).
+        
+        int[][] matriz = {
+            {0, -2, 3},
+            {2, 0, 4},
+            {-3, -4, 0}
+        };
+
+        // Verificar si la matriz es antisimétrica
+        boolean esAntisimetrica = esAntisimetrica(matriz);
+
+        // Mostrar el resultado
+        if (esAntisimetrica) {
+            System.out.println("La matriz es antisimétrica.");
+        } else {
+            System.out.println("La matriz no es antisimétrica.");
         }
     
+        */
+        
+        //EJERCICIO 20
+        
+        //Un cuadrado mágico 3 x 3 es una matriz 3 x 3 formada por números del 1 al 9 donde la
+        //suma de sus filas, sus columnas y sus diagonales son idénticas. Crear un programa que
+        //permita introducir un cuadrado por teclado y determine si este cuadrado es mágico o no.
+        //El programa deberá comprobar que los números introducidos son correctos, es decir,
+        //están entre el 1 y el 9.
+        
+        
+        
+        /*
+        
+        //EJERCICIO 20 EXTRA
+        
+        //Crear una función que rellene un vector con números aleatorios, pasándole un arreglo por
+        //parámetro. Después haremos otra función o procedimiento que imprima el vector.
+        
+        System.out.println("Ingrese el tamaño del vector");
+        int tamanio = leer.nextInt();
+        int[] vector = new int[tamanio];
+        
+        rellenar(vector, tamanio);
+        mostrarVector(vector, tamanio);
     }
         /*
     
-        //PROCEDIMIENTO EJERCICIO 14
+    //PROCEDIMIENTO EJERCICIO 14
     
     public static void convertir (int euros, String moneda) {
         
@@ -408,11 +503,66 @@ public class Guía7Enc2939Ejer15 {
             System.out.println(euros + " euros equivalen a " + euros * 0.86 + " libras.");
         }
     }
-        */
+        
+    //FUNCIÓN EJERCICIO 17
     
+    public static int contarDigitos (int numero) {
+        if (numero == 0) {
+            return 1; // El número 0 tiene un dígito
+        }
 
+        int contador = 0;
+        while (numero != 0) {
+            numero /= 10; // Divide sucesivamente por 10 para contar los dígitos
+            contador++;
+        }
+        return contador;
+    }
+    
+    //FUNCION EJERCICIO 19
+    
+    public static boolean esAntisimetrica(int[][] matriz) {
+        int filas = matriz.length; //Almacenamos la cantidad de filas que tiene la matriz
+        int columnas = matriz[0].length; //Almacenamos la cantidad de items por fila, lo que equivale al número de columnas
 
+        // Verificar si la matriz es cuadrada (misma cantidad de filas y columnas)
+        if (filas != columnas) {
+            return false;
+        }
 
+        // Verificar si la matriz es antisimétrica
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < i; j++) {
+                if (matriz[i][j] != -matriz[j][i]) {
+                    return false;
+                }
+            }
+        }
 
-
+        return true;
+    }
+    
+    */
+    
+    /*
+    
+    //FUNCION EJERCICIO 20 EXTRA
+    
+    public static int[] rellenar (int[] vector, int tamanio) {
+        for (int i = 0; i < tamanio; i++) {
+            vector[i] = (int) (Math.random() * 10);
+        }
+        return vector;
+    }
+    
+    //PROCEDIMIENTO EJERCICIO 20 EXTRA
+    
+    public static void mostrarVector (int[] vector, int tamanio) {
+        for (int i = 0; i < tamanio; i++) {
+            System.out.print("[" + vector[i] + "]");
+        }
+        System.out.println("");
+    }
+    */
+    }
 }
